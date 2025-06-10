@@ -29,7 +29,7 @@ export const LeadScraper = () => {
   const fetchProfiles = async () => {
     try {
       setInitialLoading(true);
-      const response = await fetch('http://localhost:5000/profiles');
+      const response = await fetch('https://assignment-kb6p.onrender.com/profiles');
       if (response.ok) {
         const data = await response.json();
         setProfiles(data);

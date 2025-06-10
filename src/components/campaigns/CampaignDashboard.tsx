@@ -26,7 +26,7 @@ export const CampaignDashboard = () => {
   const fetchCampaigns = async () => {
     try {
       setLoading(true);
-      const response = await fetch('http://localhost:5000/campaigns');
+      const response = await fetch('https://assignment-kb6p.onrender.com/campaigns');
       if (response.ok) {
         const data = await response.json();
         setCampaigns(data);

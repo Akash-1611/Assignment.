@@ -33,7 +33,7 @@ export const MessageGenerator = () => {
     setLoading(true);
     
     try {
-      const response = await fetch('http://localhost:5000/campaigns/generate-message', {
+      const response = await fetch('https://assignment-kb6p.onrender.com/airoute', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(profileData),

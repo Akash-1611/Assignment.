@@ -45,7 +45,7 @@ export const CreateCampaignDialog = ({ open, onOpenChange, onCampaignCreated }: 
         accountIDs: formData.accountIDs.filter(id => id.trim() !== ''),
       };
 
-      const response = await fetch('http://localhost:5000/campaigns', {
+      const response = await fetch('https://assignment-kb6p.onrender.com/campaigns', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(cleanedData),
