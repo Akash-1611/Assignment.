@@ -6,7 +6,7 @@ export class LinkedInScraperService {
   private page: Page | null = null;
   private isLoggedIn = false;
   private maxRetries = 3;
-
+   
   async initialize(): Promise<void> {
     try {
       this.browser = await puppeteer.launch({
@@ -201,7 +201,7 @@ export class LinkedInScraperService {
     console.error('❌ All login attempts failed');
     return false;
   }
-
+    
   async scrapeProfiles(searchUrl: string, maxProfiles: number = 20): Promise<IProfile[]> {
     if (!this.page || !this.isLoggedIn) {
       throw new Error('Must be logged in to scrape profiles');
@@ -270,11 +270,8 @@ export class LinkedInScraperService {
           // Navigate to next page
           currentPage++;
           if (currentPage < maxPages && profiles.length < maxProfiles) {
-            const hasNextPage = await this.goToNextPage();
-            if (!hasNextPage) {
-              console.log('No more pages available');
-              break;
-            }
+           
+            
           }
         }
 
@@ -295,7 +292,7 @@ export class LinkedInScraperService {
     console.error('❌ All scraping attempts failed');
     throw new Error('Scraping failed after maximum retries');
   }
-
+     
   private async waitForSearchResults(): Promise<boolean> {
     const selectors = [
       '.search-results-container',
@@ -572,28 +569,8 @@ export class LinkedInScraperService {
   }
 
   // Add method to check if scraper is still alive
-  async isAlive(): Promise<boolean> {
-    try {
-      return !!(this.browser && this.page && !this.browser.disconnected);
-    } catch {
-      return false;
-    }
-  }
+
 
   // Add method to reinitialize if needed
-  async ensureAlive(): Promise<void> {
-    const alive = await this.isAlive();
-    if (!alive) {
-      console.log('🔄 Browser disconnected, reinitializing...');
-      await this.cleanup();
-      await this.initialize();
-      
-      if (!this.isLoggedIn) {
-        const loginSuccess = await this.login();
-        if (!loginSuccess) {
-          throw new Error('Failed to re-login after browser restart');
-        }
-      }
-    }
-  }
+  
 }
