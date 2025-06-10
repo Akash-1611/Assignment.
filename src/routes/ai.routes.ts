@@ -1,4 +1,5 @@
 import express from 'express';
+import type { Request, Response } from 'express';
 import 'dotenv/config';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 
@@ -35,7 +36,7 @@ Make it personalized, professional, and include a clear value proposition about 
 
   } catch (err: any) {
     console.error('Gemini API Error:', err);
-    
+        
     // Handle rate limit specifically
     if (err.status === 429) {
       return res.status(429).json({
