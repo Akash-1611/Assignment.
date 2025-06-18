@@ -20,7 +20,7 @@ router.post('/', async (req, res) => {
 
     const prompt = `Write a friendly LinkedIn outreach message for ${name}, a ${jobTitle}${company ? ` at ${company}` : ''}${location ? `, located in ${location}` : ''}. ${summary ? `Additional context: ${summary}` : ''}
 
-Make it personalized, professional, and include a clear value proposition about how OutfloAI can help with LinkedIn outreach automation and lead generation. Keep it concise and engaging.`;
+Make it personalized, professional, and include a clear value proposition about how Scrapper can help with LinkedIn outreach automation and lead generation. Keep it concise and engaging.`;
 
     const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
 
