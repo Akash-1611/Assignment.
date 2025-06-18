@@ -52,7 +52,7 @@ export const MessageGenerator = () => {
     } catch (error) {
       console.error('Error generating message:', error);
       // Fallback demo message
-      const demoMessage = `Hey ${profileData.name}, I noticed you're working as a ${profileData.jobTitle} at ${profileData.company}. OutfloAI can help automate your LinkedIn outreach to increase meetings & sales. Would love to connect and show you how we can help streamline your lead generation process!`;
+      const demoMessage = `Hey ${profileData.name}, I noticed you're working as a ${profileData.jobTitle} at ${profileData.company}. Scrapper can help automate your LinkedIn outreach to increase meetings & sales. Would love to connect and show you how we can help streamline your lead generation process!`;
       setGeneratedMessage(demoMessage);
       toast({
         title: "Demo Mode",

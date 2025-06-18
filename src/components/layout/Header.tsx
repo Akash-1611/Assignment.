@@ -11,7 +11,7 @@ export const Header = () => {
             <div className="w-8 h-8 bg-gradient-to-r from-primary to-primary/60 rounded-lg flex items-center justify-center">
               <Search className="w-4 h-4 text-primary-foreground" />
             </div>
-            <span className="text-xl font-bold">OutfloAI</span>
+            <span className="text-xl font-bold">Scrapper</span>
             <Badge variant="secondary" className="ml-2">Pro</Badge>
           </div>
           
